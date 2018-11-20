@@ -1,10 +1,10 @@
-import React, { memo } from 'react';
+import React, { memo} from 'react';
 import TodoItem from './TodoItem';
 
 function TodoList(props) {
   return (
     <div className="TodoList">
-      <h1>My Title</h1>
+      <h1>{props.children}</h1>
       <ul>
         {props.todos.map((todo) => (
           <TodoItem

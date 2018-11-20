@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import TodoList from './TodoList';
-
+import ThemeContext from './contexts/theme';
 
 class App extends Component {
   state = {
@@ -20,38 +20,41 @@ class App extends Component {
   render() {
     return (
       <div>
-        <TodoList
-          todos={this.state.todos}
-        />
-        
-        <label>Add Todo:</label>
-        <input
-          onChange={(e) => {
-            this.setState({
-              input: e.target.value
-            })
-          }}
-          value={this.state.input}
-          placeholder="type here"
-        />
+        <ThemeContext.Provider value="dark">
 
-        <button
-            onClick={(e) => {
+          <TodoList
+            todos={this.state.todos}
+          />
+          
+          <label>Add Todo:</label>
+          <input
+            onChange={(e) => {
               this.setState({
-                input: '',
-                todos: [
-                  ...this.state.todos,
-                  {
-                    id: Math.random(),
-                    title: this.state.input,
-                  },
-                ]
+                input: e.target.value
               })
-              console.log(this.state.input)
             }}
-        >
-          Click Me
-        </button>
+            value={this.state.input}
+            placeholder="type here"
+          />
+
+          <button
+              onClick={(e) => {
+                this.setState({
+                  input: '',
+                  todos: [
+                    ...this.state.todos,
+                    {
+                      id: Math.random(),
+                      title: this.state.input,
+                    },
+                  ]
+                })
+                console.log(this.state.input)
+              }}
+          >
+            Click Me
+          </button>
+        </ThemeContext.Provider>
       </div>
     );
   }
