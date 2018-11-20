@@ -1,9 +1,10 @@
 import React from 'react';
+import LuckyEvens from './LuckyEvens';
 
 function App() {
   return (
-    <div>
-      <h1>Lucky Evens</h1>
+    <div className="app">
+      <LuckyEvens />
     </div>
   );
 }
