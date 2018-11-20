@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 function TodoItem(props) {
     console.log(props.todo.title);
@@ -10,4 +10,4 @@ function TodoItem(props) {
   )
 }
 
-export default TodoItem;
+export default memo(TodoItem);
