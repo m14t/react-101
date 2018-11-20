@@ -9,12 +9,10 @@ class App extends Component {
       {
         id: 1,
         title: 'Item 1',
-        dateAdded: '2018-11-11',
       },
       {
         id: 2,
-        title: 'Item 1',
-        dateAdded: '2018-11-12',
+        title: 'Item 2',
       },
     ]
   }

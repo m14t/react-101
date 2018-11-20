@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { memo } from 'react';
+import TodoItem from './TodoItem';
 
 function TodoList(props) {
   return (
@@ -6,13 +7,14 @@ function TodoList(props) {
       <h1>My Title</h1>
       <ul>
         {props.todos.map((todo) => (
-          <li key={todo.id}>
-            {todo.title}
-          </li>
+          <TodoItem
+            key={todo.id}
+            todo={todo}
+          />
         ))}
       </ul>
     </div>
   )
 }
 
-export default TodoList;
+export default memo(TodoList);
