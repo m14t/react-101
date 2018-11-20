@@ -14,43 +14,42 @@ class App extends Component {
         id: 2,
         title: 'Item 2',
       },
-    ]
-  }
+    ],
+  };
 
   render() {
     return (
       <div>
         <ThemeContext.Provider value="dark">
+          <TodoList todos={this.state.todos}>
+            <span style={{ color: 'red' }}>My Todos</span>
+          </TodoList>
 
-          <TodoList
-            todos={this.state.todos}
-          />
-          
           <label>Add Todo:</label>
           <input
             onChange={(e) => {
               this.setState({
-                input: e.target.value
-              })
+                input: e.target.value,
+              });
             }}
             value={this.state.input}
             placeholder="type here"
           />
 
           <button
-              onClick={(e) => {
-                this.setState({
-                  input: '',
-                  todos: [
-                    ...this.state.todos,
-                    {
-                      id: Math.random(),
-                      title: this.state.input,
-                    },
-                  ]
-                })
-                console.log(this.state.input)
-              }}
+            onClick={(e) => {
+              this.setState({
+                input: '',
+                todos: [
+                  ...this.state.todos,
+                  {
+                    id: Math.random(),
+                    title: this.state.input,
+                  },
+                ],
+              });
+              console.log(this.state.input);
+            }}
           >
             Click Me
           </button>
