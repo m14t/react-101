@@ -1,10 +1,18 @@
 import React, { PureComponent } from 'react';
 
-class LuckyEvens extends PureComponent {
+interface LuckyEvensProps {
+  title: string;
+}
+
+class LuckyEvens extends PureComponent<LuckyEvensProps, {}> {
+  static defaultProps = {
+    title: 'Lucky Evens',
+  };
+
   render() {
     return (
       <div>
-        <h1>Lucky Evens</h1>
+        <h1>{this.props.title}</h1>
       </div>
     );
   }
