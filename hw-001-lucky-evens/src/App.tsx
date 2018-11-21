@@ -5,6 +5,11 @@ function App() {
   return (
     <div className="app">
       <LuckyEvens />
+
+      <LuckyEvens
+        title="Lucky Evens - 100"
+        sides={100}
+      />
     </div>
   );
 }

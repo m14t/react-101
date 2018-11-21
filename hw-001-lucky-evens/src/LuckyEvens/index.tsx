@@ -2,6 +2,7 @@ import React, { PureComponent } from 'react';
 import Dice from './Dice';
 
 interface LuckyEvensProps {
+  sides?: number;
   title: string;
 }
 
@@ -33,7 +34,7 @@ class LuckyEvens extends PureComponent<LuckyEvensProps, LuckyEvensState> {
       <div>
         <h1>{this.props.title}</h1>
 
-        <Dice onRoll={this.onRoll} />
+        <Dice onRoll={this.onRoll} sides={this.props.sides} />
 
         <div>
           <strong>Games Played:</strong>
